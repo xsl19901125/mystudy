@@ -1,6 +1,7 @@
 package com.example.gooutuser;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -42,17 +43,27 @@ public class MainLoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// 去掉标题栏，必须在setCOntentView之前调用  
-        requestWindowFeature(Window.FEATURE_NO_TITLE);  
-        // 第一个参数是需要添加的新的窗口属性的标志位（相当于值）  
-        // 第二个 参数是窗口的哪一个特性标志位需要修改（相当于开关）
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);  
+		//初始化窗口
+		initWindows();  
 		setContentView(R.layout.user_login_main);
 		//初始化控件
 		initButton();
+		//给按钮添加监听
+		addButtonListener();
 		
+	}
+	/**
+	 * 
+	 * @Title: addButtonListener 
+	 * @Description:(给按钮添加监听) 
+	 * @param     设定文件 
+	 * @return void    返回类型 
+	 * @throws 
+	*
+	 */
+	private void addButtonListener() {
 		//给登录按钮添加监听
+		//TODO 实现登录界面
 		buttonLogin.setOnClickListener(new OnClickListener() {
 			private String tag="buttonLogin";
 
@@ -65,13 +76,39 @@ public class MainLoginActivity extends Activity {
 				Log.v(tag,"密码："+userPwd);
 				
 			}
+		});	
+		//注册按钮的监听
+		buttonReg.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//跳转到注册界面
+				Intent intent=new Intent(MainLoginActivity.this,UserRegister.class);
+				startActivity(intent);				
+			}
 		});
-		
+	}
+	/**
+	 * 
+	 * @Title: initWindows 
+	 * @Description:(初始化窗口) 
+	 * @param     设定文件 
+	 * @return void    返回类型 
+	 * @throws 
+	*
+	 */
+	private void initWindows() {
+		// 去掉标题栏，必须在setCOntentView之前调用  
+        requestWindowFeature(Window.FEATURE_NO_TITLE);  
+        // 第一个参数是需要添加的新的窗口属性的标志位（相当于值）  
+        // 第二个 参数是窗口的哪一个特性标志位需要修改（相当于开关）
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	}
 	/**
 	 * 
 	 * @Title: initButton 
-	 * @Description: TODO(初始化，用户登录框，密码框，登录，注册的按钮) 
+	 * @Description:(初始化，用户登录框，密码框，登录，注册的按钮) 
 	 * @param     设定文件 
 	 * @return void    返回类型 
 	 * @throws 

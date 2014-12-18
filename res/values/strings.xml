@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<!-- 登录界面 -->
     <string name="app_name">GoOutuser</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -12,5 +12,14 @@
     <string name="tv_forget_password">忘记密码</string>
     <string name="btn_add_accounts">用户登录</string>
     <string name="btn_quick_register">快速注册</string>
+    <string name="title_activity_user_register">UserRegister</string>
+    <!-- 注册界面 -->
+    <string name="user_register_title">欢迎注册新用户</string>
+    <string name="account_reg_hint">请输入注册用户名</string>
+    <string name="password_reg_hint">请输入初始化密码</string>
+    <string name="password_register_confirm_hint">输入初始化确认密码</string>
+    <string name="tv_phone">请输入注册手机号</string>
+    <string name="user_register_button">确认注册</string>
+    <string name="user_register_cancle_button">取消注册</string>
 
 </resources>

@@ -89,34 +89,54 @@ public final class R {
         public static final int title_menu_current=0x7f020035;
     }
     public static final class id {
-        public static final int action_settings=0x7f090008;
-        public static final int btLogin=0x7f090006;
-        public static final int btRegist=0x7f090007;
+        public static final int action_settings=0x7f09000e;
+        public static final int btLogin=0x7f09000c;
+        public static final int btRegist=0x7f09000d;
+        public static final int bt_reg_cancel=0x7f09000a;
+        public static final int bt_reg_ok=0x7f090009;
         public static final int ll_account=0x7f090001;
         public static final int ll_password=0x7f090003;
-        public static final int tv_forget_password=0x7f090005;
+        public static final int ll_password_confirm=0x7f090005;
+        public static final int tv_forget_password=0x7f09000b;
         public static final int tv_title=0x7f090000;
         public static final int userLoginNameTxt=0x7f090002;
+        public static final int userPhone=0x7f090007;
+        public static final int userPhoneTxt=0x7f090008;
         public static final int userPwdTxt=0x7f090004;
+        public static final int user_pwdconfirmTxt=0x7f090006;
     }
     public static final class layout {
-        public static final int user_login_main=0x7f030000;
+        public static final int activity_user_register=0x7f030000;
+        public static final int user_login_main=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
+        public static final int user_register=0x7f080001;
     }
     public static final class string {
         public static final int account_hint=0x7f060005;
+        public static final int account_reg_hint=0x7f06000d;
         public static final int action_settings=0x7f060002;
+        /**  登录界面 
+         */
         public static final int app_name=0x7f060000;
         public static final int btn_add_accounts=0x7f060009;
         public static final int btn_quick_register=0x7f06000a;
         public static final int hello_world=0x7f060001;
         public static final int login_to_app=0x7f060003;
         public static final int password_hint=0x7f060007;
+        public static final int password_reg_hint=0x7f06000e;
+        public static final int password_register_confirm_hint=0x7f06000f;
+        public static final int title_activity_user_register=0x7f06000b;
         public static final int tv_account=0x7f060004;
         public static final int tv_forget_password=0x7f060008;
         public static final int tv_password=0x7f060006;
+        public static final int tv_phone=0x7f060010;
+        public static final int user_register_button=0x7f060011;
+        public static final int user_register_cancle_button=0x7f060012;
+        /**  注册界面 
+         */
+        public static final int user_register_title=0x7f06000c;
     }
     public static final class style {
         /** 
