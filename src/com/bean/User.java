@@ -9,19 +9,29 @@ package com.bean;
  */
 public class User {
 	private String userName;
-	private String userPwd;
+	public User() {
+		super();
+	}
+	private String userPwdMD5;
 	private String userPhone;
 	public String getUserName() {
 		return userName;
 	}
+	public User(String userName, String userPwdMD5, String userPhone) {
+		super();
+		this.userName = userName;
+		this.userPwdMD5 = userPwdMD5;
+		this.userPhone = userPhone;
+	}
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public String getUserPwd() {
-		return userPwd;
+	
+	public String getUserPwdMD5() {
+		return userPwdMD5;
 	}
-	public void setUserPwd(String userPwd) {
-		this.userPwd = userPwd;
+	public void setUserPwdMD5(String userPwdMD5) {
+		this.userPwdMD5 = userPwdMD5;
 	}
 	public String getUserPhone() {
 		return userPhone;
