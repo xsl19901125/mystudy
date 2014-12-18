@@ -1,8 +1,16 @@
 package com.example.gooutuser;
 
+import java.security.NoSuchAlgorithmException;
+
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVObject;
+import com.avos.avoscloud.SaveCallback;
+import com.util.MD5Util;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +19,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * 
@@ -72,14 +81,66 @@ public class UserRegister extends Activity {
 		});
 		/**
 		 * 给注册添加监听
-		 * TODO
+		 * 
 		 */
 		buttonLogin.setOnClickListener(new OnClickListener() {
 			
+			private String tag="TestLogin";
+
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
+				String userName=editTextUserName.getText().toString().trim();
+				String userPwd=editTextUserPass.getText().toString().trim();
+				String userPwdConfirm=editTextUserPassConfirm.getText().toString().trim();
+				String userPhone=editTextUserRegisterPhone.getText().toString().trim();
+				String userPwdUpdate=null;
+				if(userName.isEmpty()){
+					Toast.makeText(UserRegister.this, "用户名不能为空", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				if(userPwd.isEmpty()||userPwdConfirm.isEmpty()){
+					Toast.makeText(UserRegister.this, "密码不能为空", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				if(userPhone.isEmpty()){
+					Toast.makeText(UserRegister.this, "注册手机号不能为空", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				if(!userPwd.equals(userPwdConfirm)){
+					Toast.makeText(UserRegister.this, "密码不一致", Toast.LENGTH_SHORT).show();
+					return;
+				}else{
+					//讲密码转换成MD5
+					try {
+						userPwdUpdate=MD5Util.getMD5(userPwd);
+					} catch (NoSuchAlgorithmException e) {
+						e.printStackTrace();
+						return;
+					}
+					AVObject userInfoReg=new AVObject("UserInfo");
+					userInfoReg.put("userName", userName);
+					userInfoReg.put("userPwdMD5", userPwdUpdate);
+					userInfoReg.put("userPhone", userPhone);
+					userInfoReg.saveInBackground(new SaveCallback() {
+						//TODO未来要增加一个用户名唯一的验证
+						@Override
+						public void done(AVException e) {
+							if(e==null){
+								
+								Log.v(tag, "注册成功");
+								//跳转到登录界面
+								Intent intent=new Intent(UserRegister.this,MainLoginActivity.class);
+								startActivity(intent);
+							}else{
+								Toast.makeText(UserRegister.this, "注册没成功", Toast.LENGTH_SHORT).show();
+								return;
+							}
+						}
+					});
+				}
+			
 				
+				Log.v(tag, "登录成功");
 			}
 		});
 	}

@@ -16,9 +16,7 @@ public class GoOuterApp extends Application {
 		 AVOSCloud.initialize(this, ConfigInterface.uID,
 				 ConfigInterface.uKey);
 		 Log.v(tag, "使用集成的application启动");
-		 AVObject testObject = new AVObject("TestObject");
-		 testObject.put("foo", "bar");
-		 testObject.saveInBackground();
+		
 	}
 
 }
