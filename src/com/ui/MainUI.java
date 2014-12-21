@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 /**
  * 
  * @ClassName: MainUI 
@@ -23,6 +25,7 @@ public class MainUI extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		initWindows();
 		setContentView(R.layout.activity_main_ui);
 	}
 
@@ -44,4 +47,22 @@ public class MainUI extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	/**
+	 * 
+	 * @Title: initWindows
+	 * @Description:(初始化窗口)
+	 * @param 设定文件
+	 * @return void 返回类型
+	 * @throws
+	 * 
+	 */
+	private void initWindows() {
+		// 去掉标题栏，必须在setCOntentView之前调用
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		// 第一个参数是需要添加的新的窗口属性的标志位（相当于值）
+		// 第二个 参数是窗口的哪一个特性标志位需要修改（相当于开关）
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+				WindowManager.LayoutParams.FLAG_FULLSCREEN);
+	}
+
 }

@@ -22,6 +22,7 @@ import com.avos.avoscloud.AVObject;
 import com.avos.avoscloud.AVQuery;
 import com.avos.avoscloud.FindCallback;
 import com.bean.User;
+import com.ui.MainUI;
 import com.util.MD5Util;
 
 /**
@@ -124,7 +125,9 @@ public class MainLoginActivity extends Activity {
 					@Override
 					public void done(List<AVObject> list, AVException e) {
 						if (list.size() != 0) {
-							// TODO做界面跳转
+							// TODO
+							Intent intent =new Intent(MainLoginActivity.this,MainUI.class);
+							startActivity(intent);
 							Log.v(tag, "登陆成功");
 						} else {
 							editText.setText("");

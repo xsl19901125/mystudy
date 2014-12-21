@@ -24,5 +24,8 @@
     <string name="user_register_cancle_button">取消注册</string>
     <string name="title_activity_main_ui">MainUI</string>
     <!-- MainUI -->
+    <string name="main_ui_title">GoOutuser客户端欢迎您</string>
+    <string name="main_service">您需要的服务</string>
+    <string name="his_order">历史订单</string>
 
 </resources>

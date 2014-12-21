@@ -18,14 +18,14 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:src="@drawable/logo_yunpan_home" />
+            android:src="@drawable/ic_launcher" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/iv_logo"
-            android:text="@string/tv_my_cloud"
+            android:text="@string/main_ui_title"
             android:textColor="@color/white" />
 
         <ImageButton
@@ -50,14 +50,14 @@
             android:id="@+id/tv_find"
             style="@style/menuTitle"
             android:background="@drawable/title_menu_current"
-            android:text="@string/tv_find"
+            android:text="@string/main_service"
             android:textColor="@color/blue" />
 
         <TextView
             android:id="@+id/tv_my_file"
             style="@style/menuTitle"
             android:background="@drawable/title_menu_bg"
-            android:text="@string/tv_my_file"
+            android:text="@string/his_order"
             android:textColor="@color/grey" />
     </LinearLayout>
 
