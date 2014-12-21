@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!-- 登录界面 -->
+
+    <!-- 登录界面 -->
     <string name="app_name">GoOutuser</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -21,5 +22,7 @@
     <string name="tv_phone">请输入注册手机号</string>
     <string name="user_register_button">确认注册</string>
     <string name="user_register_cancle_button">取消注册</string>
+    <string name="title_activity_main_ui">MainUI</string>
+    <!-- MainUI -->
 
 </resources>

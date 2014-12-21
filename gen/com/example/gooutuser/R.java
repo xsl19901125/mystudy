@@ -106,12 +106,14 @@ public final class R {
         public static final int user_pwdconfirmTxt=0x7f090006;
     }
     public static final class layout {
-        public static final int activity_user_register=0x7f030000;
-        public static final int user_login_main=0x7f030001;
+        public static final int activity_main_ui=0x7f030000;
+        public static final int activity_user_register=0x7f030001;
+        public static final int user_login_main=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;
-        public static final int user_register=0x7f080001;
+        public static final int main_ui=0x7f080001;
+        public static final int user_register=0x7f080002;
     }
     public static final class string {
         public static final int account_hint=0x7f060005;
@@ -127,6 +129,7 @@ public final class R {
         public static final int password_hint=0x7f060007;
         public static final int password_reg_hint=0x7f06000e;
         public static final int password_register_confirm_hint=0x7f06000f;
+        public static final int title_activity_main_ui=0x7f060013;
         public static final int title_activity_user_register=0x7f06000b;
         public static final int tv_account=0x7f060004;
         public static final int tv_forget_password=0x7f060008;

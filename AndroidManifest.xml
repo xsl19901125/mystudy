@@ -32,6 +32,10 @@
             android:name=".UserRegister"
             android:label="@string/title_activity_user_register" >
         </activity>
+        <activity
+            android:name="com.ui.MainUI"
+            android:label="@string/title_activity_main_ui" >
+        </activity>
     </application>
 
 </manifest>

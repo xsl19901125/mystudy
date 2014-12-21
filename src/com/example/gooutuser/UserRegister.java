@@ -53,6 +53,15 @@ public class UserRegister extends Activity {
 		// 初始化控件
 		initWidget();
 	}
+	/**
+	 * 失去界面，销毁他
+	 */
+	@Override
+	protected void onStop() {
+		super.onStop();
+		UserRegister.this.finish();
+		
+	}
 
 	/**
 	 * 
@@ -160,6 +169,7 @@ public class UserRegister extends Activity {
 							// 跳转到登录界面
 							Intent intent = new Intent(UserRegister.this,
 									MainLoginActivity.class);
+							
 							startActivity(intent);
 						} else {
 							Toast.makeText(UserRegister.this, "注册没成功",
