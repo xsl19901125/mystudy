@@ -1,16 +1,17 @@
 package com.ui;
 
-import com.example.gooutuser.R;
-import com.example.gooutuser.R.id;
-import com.example.gooutuser.R.layout;
-import com.example.gooutuser.R.menu;
-
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.TextView;
+
+import com.example.gooutuser.R;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 /**
  * 
  * @ClassName: MainUI 
@@ -20,13 +21,42 @@ import android.view.WindowManager;
  *  
 *
  */
-public class MainUI extends Activity {
+public class MainUI extends FragmentActivity {
+	//内部的ViewPager
+	private ViewPager vpContent;
+	/**
+	 * 头部选项卡文本域
+	 */
+	//需要的服务
+	private TextView tvService;
+	//历史订单
+	private TextView tvHistoryOrder;
+	//SlidingMenue控件(slidingMenu内有android 4v包所以要把当前项目下面的包删掉)
+	private SlidingMenu slidingMenu;
+	//展开SlidingMeue的控件
+	private ImageButton imageButtonTriggerSlidingMenue;
+	
  
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		initWindows();
 		setContentView(R.layout.activity_main_ui);
+		initView();
+	}
+	/**
+	 * 
+	 * @Title: initView 
+	 * @Description: 初始化界面控件
+	 * @param     设定文件 
+	 * @return void    返回类型 
+	 * @throws 
+	**/
+	private void initView() {
+		vpContent=(ViewPager) findViewById(R.id.vp_content);
+		tvService=(TextView) findViewById(R.id.tv_service);
+		tvHistoryOrder=(TextView) findViewById(R.id.tv_hisorder);
+		imageButtonTriggerSlidingMenue=(ImageButton) findViewById(R.id.ibtn_right_menu);
 	}
 
 	@Override
