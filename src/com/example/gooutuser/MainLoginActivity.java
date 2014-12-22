@@ -28,7 +28,7 @@ import com.util.MD5Util;
 /**
  * 
  * @ClassName: MainLoginActivity
- * @Description: TODO(登录界面登录成功后界面跳转)
+ * @Description: (登录界面登录成功后界面跳转)
  * @author xushenglin
  * @date 2014-12-17 下午5:01:44
  */
@@ -78,7 +78,6 @@ public class MainLoginActivity extends Activity {
 	 */
 	private void addButtonListener() {
 		// 给登录按钮添加监听
-		// TODO 实现登录界面
 		buttonLogin.setOnClickListener(new OnClickListener() {
 			private String tag = "buttonLogin";
 
@@ -125,7 +124,7 @@ public class MainLoginActivity extends Activity {
 					@Override
 					public void done(List<AVObject> list, AVException e) {
 						if (list.size() != 0) {
-							// TODO
+							// TODO（最好能记录用户登录信息）
 							Intent intent =new Intent(MainLoginActivity.this,MainUI.class);
 							startActivity(intent);
 							Log.v(tag, "登陆成功");
