@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * 
  * @ClassName: MD5Util 
- * @Description: TODO(用于对密码加密的类) 
+ * @Description: (用于对密码加密的类) 
  * @author xushenglin
  * @date 2014-12-17 下午5:18:09   
  */
@@ -13,7 +13,7 @@ public class MD5Util {
 	/**
 	 * 
 	 * @Title: getMD5 
-	 * @Description: TODO(对字符串使用md5加密的方法) 
+	 * @Description: (对字符串使用md5加密的方法) 
 	 * @param @param str:传入参数
 	 * @param @return  md5加密后的结果
 	 * @param @throws NoSuchAlgorithmException    设定文件 

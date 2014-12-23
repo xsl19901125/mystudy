@@ -24,6 +24,7 @@ import com.avos.avoscloud.FindCallback;
 import com.bean.User;
 import com.ui.MainUI;
 import com.util.MD5Util;
+import com.util.NetConnectionUtil;
 
 /**
  * 
@@ -83,13 +84,18 @@ public class MainLoginActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-
-				userName = editText.getText().toString().trim();
-
-				userPwd = editPwd.getText().toString().trim();
-				if (userName.isEmpty() || userPwd.isEmpty()) {
-					Toast.makeText(MainLoginActivity.this, "用户名或者密码不能为空",
-							Toast.LENGTH_SHORT).show();
+				// 网络检测
+				boolean isConnected = checkNetWork();
+				if (!isConnected) {
+					return;
+				}
+				// 获取登录信息
+				getLoginInfo();
+				// 检测登录信息是否完整
+				boolean dataIsOk = checkLoginInfo();
+				if (dataIsOk) {
+					// 对用户弹出提示框
+					showTip("用户名或者密码不能为空");
 					return;
 				}
 				// 将用户密码用MD5加密
@@ -98,34 +104,110 @@ public class MainLoginActivity extends Activity {
 				} catch (NoSuchAlgorithmException e) {
 					e.printStackTrace();
 				}
-				User user = new User();
-				user.setUserName(userName);
-				user.setUserPwdMD5(userPwd);
+				//包装登录信息
+				User user = setLoginInfo();
 				// 登录验证
 				LoginQuery(user);
 
 			}
+			/**
+			 * 
+			 * @Title: setLoginInfo 
+			 * @Description: 包装登录信息
+			 * @param @return    设定文件 
+			 * @return User    包装后用户提交服务器的userBean
+			 * @throws 
+			**/
+			private User setLoginInfo() {
+				User user = new User();
+				user.setUserName(userName);
+				user.setUserPwdMD5(userPwd);
+				return user;
+			}
 
 			/**
 			 * 
-			 * @Title: LoginQuery 
+			 * @Title: getLoginInfo
+			 * @Description: 从界面获取登录信息
+			 * @param 设定文件
+			 * @return void 返回类型
+			 * @throws
+			 **/
+			private void getLoginInfo() {
+				userName = editText.getText().toString().trim();
+				userPwd = editPwd.getText().toString().trim();
+			}
+
+			/**
+			 * 
+			 * @Title: checkLoginInfo
+			 * @Description: 检测用户输入是否有效
+			 * @param @return 设定文件
+			 * @return boolean 检测结果
+			 * @throws
+			 * 
+			 */
+			private boolean checkLoginInfo() {
+				boolean dataIsOk = userName.isEmpty() || userPwd.isEmpty();
+				return dataIsOk;
+			}
+
+			/**
+			 * 
+			 * @Title: showTip
+			 * @Description: 对用户输出提示
+			 * @param @param Tips 输入的提示内容
+			 * @return void 返回类型
+			 * @throws
+			 * 
+			 */
+			private void showTip(String Tips) {
+				Toast.makeText(MainLoginActivity.this, Tips, Toast.LENGTH_SHORT)
+						.show();
+			}
+
+			/**
+			 * 
+			 * @Title: checkNetWork
+			 * @Description: 检测网络链接的方法
+			 * @param @return 设定文件
+			 * @return boolean 是否链接成功
+			 * @throws
+			 * 
+			 */
+			private boolean checkNetWork() {
+				boolean isConnect = NetConnectionUtil
+						.checkNetworkAvailable(MainLoginActivity.this);
+				if (!isConnect) {
+					// 输出提示框
+					showTip("请链接网络");
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+			/**
+			 * 
+			 * @Title: LoginQuery
 			 * @Description: 用户登录验证
-			 * @param @param user    验证用户bean 
-			 * @return void    返回类型 
-			 * @throws 
-			*
+			 * @param @param user 验证用户bean
+			 * @return void 返回类型
+			 * @throws
+			 * 
 			 */
 			private void LoginQuery(User user) {
 				AVQuery<AVObject> query = new AVQuery<AVObject>("UserInfo");
 				query.whereEqualTo("userName", user.getUserName());
 				query.whereEqualTo("userPwdMD5", user.getUserPwdMD5());
 				query.findInBackground(new FindCallback<AVObject>() {
-					
+
 					@Override
 					public void done(List<AVObject> list, AVException e) {
 						if (list.size() != 0) {
 							// TODO（最好能记录用户登录信息）
-							Intent intent =new Intent(MainLoginActivity.this,MainUI.class);
+							Intent intent = new Intent(MainLoginActivity.this,
+									MainUI.class);
 							startActivity(intent);
 							Log.v(tag, "登陆成功");
 						} else {

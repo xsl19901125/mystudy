@@ -2,7 +2,7 @@ package com.bean;
 /**
  * 
  * @ClassName: User 
- * @Description: TODO(用户注册bean) 
+ * @Description: (用户注册bean) 
  * @author xushenglin
  * @date 2014-12-17 下午4:11:05 
  *  

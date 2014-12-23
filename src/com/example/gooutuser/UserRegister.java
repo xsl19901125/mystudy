@@ -25,7 +25,7 @@ import com.util.MD5Util;
 /**
  * 
  * @ClassName: UserRegister
- * @Description: TODO(用户注册的活动界面)1.给注册添加监听
+ * @Description: (用户注册的活动界面)1.给注册添加监听
  * @author xushenglin
  * @date 2014-12-18 上午10:54:21
  **/
