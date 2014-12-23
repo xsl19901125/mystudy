@@ -195,22 +195,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int menu_video=0x7f020030;
         public static final int progress_bar_bg=0x7f020031;
         public static final int progress_bar_progress=0x7f020032;
-        public static final int title_bar_bg=0x7f020033;
-        public static final int title_bar_bg_gray=0x7f020034;
-        public static final int title_menu_bg=0x7f020035;
-        public static final int title_menu_current=0x7f020036;
+        public static final int shadow_right=0x7f020033;
+        public static final int title_bar_bg=0x7f020034;
+        public static final int title_bar_bg_gray=0x7f020035;
+        public static final int title_menu_bg=0x7f020036;
+        public static final int title_menu_current=0x7f020037;
     }
     public static final class id {
-        public static final int action_settings=0x7f040020;
-        public static final int btLogin=0x7f04001e;
-        public static final int btRegist=0x7f04001f;
+        public static final int action_settings=0x7f040021;
+        public static final int btLogin=0x7f04001f;
+        public static final int btRegist=0x7f040020;
         public static final int bt_reg_cancel=0x7f040016;
         public static final int bt_reg_ok=0x7f040015;
         public static final int fullscreen=0x7f040003;
         public static final int gv_menu=0x7f040018;
         public static final int ibtn_right_menu=0x7f040007;
         public static final int iv_logo=0x7f040006;
-        public static final int iv_menu_icon=0x7f040019;
+        public static final int iv_menu_icon=0x7f04001a;
         public static final int left=0x7f040000;
         public static final int ll_account=0x7f04000d;
         public static final int ll_bottom=0x7f040017;
@@ -218,14 +219,15 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int ll_password=0x7f04000f;
         public static final int ll_password_confirm=0x7f040011;
         public static final int margin=0x7f040002;
+        public static final int menu_frame=0x7f040019;
         public static final int right=0x7f040001;
         public static final int rl_title=0x7f040005;
         public static final int selected_view=0x7f040004;
-        public static final int slidingmenumain=0x7f04001c;
-        public static final int tv_forget_password=0x7f04001d;
+        public static final int slidingmenumain=0x7f04001d;
+        public static final int tv_forget_password=0x7f04001e;
         public static final int tv_hisorder=0x7f04000a;
-        public static final int tv_menu_msg=0x7f04001b;
-        public static final int tv_menu_title=0x7f04001a;
+        public static final int tv_menu_msg=0x7f04001c;
+        public static final int tv_menu_title=0x7f04001b;
         public static final int tv_service=0x7f040009;
         public static final int tv_title=0x7f04000c;
         public static final int userLoginNameTxt=0x7f04000e;
@@ -239,10 +241,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int activity_main_ui=0x7f030000;
         public static final int activity_user_register=0x7f030001;
         public static final int fragment_his_order=0x7f030002;
-        public static final int fragment_service=0x7f030003;
-        public static final int menu_item=0x7f030004;
-        public static final int slidingmenumain=0x7f030005;
-        public static final int user_login_main=0x7f030006;
+        public static final int fragment_menu=0x7f030003;
+        public static final int fragment_service=0x7f030004;
+        public static final int menu_frame=0x7f030005;
+        public static final int menu_item=0x7f030006;
+        public static final int slidingmenumain=0x7f030007;
+        public static final int test_fragemtn_b=0x7f030008;
+        public static final int test_fragment_a=0x7f030009;
+        public static final int user_login_main=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -251,6 +257,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class string {
         public static final int account_hint=0x7f070005;
+        public static final int account_message=0x7f070018;
         public static final int account_reg_hint=0x7f07000d;
         public static final int action_settings=0x7f070002;
         /**  登录界面 
@@ -265,6 +272,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /**  MainUI 
          */
         public static final int main_ui_title=0x7f070014;
+        /**  SlidingMenu 
+         */
+        public static final int my_center=0x7f070017;
         public static final int password_hint=0x7f070007;
         public static final int password_reg_hint=0x7f07000e;
         public static final int password_register_confirm_hint=0x7f07000f;

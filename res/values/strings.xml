@@ -27,5 +27,8 @@
     <string name="main_ui_title">GoOutuser客户端欢迎您</string>
     <string name="main_service">您需要的服务</string>
     <string name="his_order">历史订单</string>
+    <!-- SlidingMenu -->
+    <string name="my_center">个人中心</string>
+    <string name="account_message">个人信息</string>
 
 </resources>
