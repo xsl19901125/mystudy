@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.main.ui.fragment.MainServiceFragment;
 import com.test.TestFragmentA;
 import com.test.TestFragmentB;
 /**
@@ -23,7 +24,7 @@ public class MyViewPagerAdapter extends FragmentPagerAdapter {
 		fragments=new Fragment[2];
 		//TODO
 		//创建两个Fragment
-		fragments[0]=new TestFragmentA();
+		fragments[0]=new MainServiceFragment();
 		fragments[1]=new TestFragmentB();
 	}
 

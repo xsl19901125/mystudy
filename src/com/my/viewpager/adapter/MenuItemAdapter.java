@@ -3,6 +3,7 @@ package com.my.viewpager.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class MenuItemAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
 
 	private int margin;
+	private String tag="TestNull";
 
 	/**
 	 * 
@@ -76,8 +78,17 @@ public class MenuItemAdapter extends BaseAdapter {
 		int height = parent.getHeight() / 3 - margin;
 		AbsListView.LayoutParams param = new AbsListView.LayoutParams(LayoutParams.MATCH_PARENT, height);
 		ViewHolder holder = null;
-		// 重用view控件
-		holder = reUserView(convertView, parent);
+
+		if (convertView == null) {
+			convertView = inflater.inflate(R.layout.menu_item, parent, false);
+			holder = new ViewHolder();
+			holder.ivImageView = (ImageView) convertView.findViewById(R.id.iv_menu_icon);
+			holder.tvMenuTitle = (TextView) convertView.findViewById(R.id.tv_menu_title);
+			holder.tvMenuMsg= (TextView) convertView.findViewById(R.id.tv_menu_msg);
+			convertView.setTag(holder);
+		} else {
+			holder = (ViewHolder) convertView.getTag();
+		}
 		//向里面设置数据 
 		setMenuItemData(position, holder);
 		convertView.setLayoutParams(param);

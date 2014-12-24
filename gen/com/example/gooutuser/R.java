@@ -195,11 +195,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int menu_video=0x7f020030;
         public static final int progress_bar_bg=0x7f020031;
         public static final int progress_bar_progress=0x7f020032;
-        public static final int shadow_right=0x7f020033;
-        public static final int title_bar_bg=0x7f020034;
-        public static final int title_bar_bg_gray=0x7f020035;
-        public static final int title_menu_bg=0x7f020036;
-        public static final int title_menu_current=0x7f020037;
+        public static final int service_call_car=0x7f020033;
+        public static final int service_call_car_out=0x7f020034;
+        public static final int service_search_parking=0x7f020035;
+        public static final int shadow_right=0x7f020036;
+        public static final int title_bar_bg=0x7f020037;
+        public static final int title_bar_bg_gray=0x7f020038;
+        public static final int title_menu_bg=0x7f020039;
+        public static final int title_menu_current=0x7f02003a;
     }
     public static final class id {
         public static final int action_settings=0x7f040021;
@@ -278,6 +281,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int password_hint=0x7f070007;
         public static final int password_reg_hint=0x7f07000e;
         public static final int password_register_confirm_hint=0x7f07000f;
+        /**  主服务界面 
+         */
+        public static final int service_go_outer=0x7f070019;
+        public static final int service_go_outer_service=0x7f07001a;
         public static final int title_activity_main_ui=0x7f070013;
         public static final int title_activity_user_register=0x7f07000b;
         public static final int tv_account=0x7f070004;

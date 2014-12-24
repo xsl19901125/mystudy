@@ -30,5 +30,8 @@
     <!-- SlidingMenu -->
     <string name="my_center">个人中心</string>
     <string name="account_message">个人信息</string>
+    <!-- 主服务界面 -->
+    <string name="service_go_outer">专车</string>
+    <string name="service_go_outer_service">提供出行叫车服务</string>
 
 </resources>
