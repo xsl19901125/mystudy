@@ -5,9 +5,12 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 
 import com.bean.ui.MenuItem;
@@ -30,6 +33,8 @@ public class MainServiceFragment extends Fragment {
 		View view=inflater.inflate(R.layout.fragment_service, container,false);
 		//初始化控件
 		initView(view);
+		
+		
 		//配置gridView适配器和数据
 		setGridViewData();
 		return view;
@@ -86,6 +91,37 @@ public class MainServiceFragment extends Fragment {
 	
 	private void initView(View view) {
 		gvService=(GridView) view.findViewById(R.id.gv_menu);
+		
+		
+		
+		gvService.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				String Tag="TestOnclick";
+				Log.v(Tag, "View:"+view);
+				Log.v(Tag, "position:"+position);
+				Log.v(Tag, "id:"+id);
+				/*if(position==0){
+					Log.v(Tag, "打开定车页面");
+				}*/
+				switch (position) {
+				case 0:
+					Log.v(Tag, "打开定车页面");
+					break;
+				case 1:
+					Log.v(Tag, "定车位界面");
+					break;
+
+				default:
+					Log.v(Tag, "其他界面");
+					break;
+				}
+				
+			}
+		});
+		
 	}
 
 }

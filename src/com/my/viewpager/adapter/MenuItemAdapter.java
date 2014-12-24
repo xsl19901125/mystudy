@@ -6,6 +6,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AbsListView;
@@ -89,6 +90,14 @@ public class MenuItemAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
+	/*	convertView.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Log.v(tag, "被点击了");
+				
+			}
+		});*/
 		//向里面设置数据 
 		setMenuItemData(position, holder);
 		convertView.setLayoutParams(param);
