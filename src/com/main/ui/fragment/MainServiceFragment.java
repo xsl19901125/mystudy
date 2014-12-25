@@ -3,6 +3,7 @@ package com.main.ui.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -16,6 +17,7 @@ import android.widget.GridView;
 import com.bean.ui.MenuItem;
 import com.example.gooutuser.R;
 import com.my.viewpager.adapter.MenuItemAdapter;
+import com.ui.LocationUI;
 /**
  * 
  * @ClassName: MainServiceFragment 
@@ -108,7 +110,9 @@ public class MainServiceFragment extends Fragment {
 				}*/
 				switch (position) {
 				case 0:
-					Log.v(Tag, "打开定车页面");
+					Intent intent=new Intent(getActivity(),LocationUI.class);
+					startActivity(intent);
+					
 					break;
 				case 1:
 					Log.v(Tag, "定车位界面");

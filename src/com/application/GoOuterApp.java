@@ -5,18 +5,29 @@ import android.util.Log;
 
 import com.avos.avoscloud.AVOSCloud;
 import com.avos.avoscloud.AVObject;
-import com.config.ConfigInterface;
-public class GoOuterApp extends Application {
 
-	private String tag="GoOuterApp";
+
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.GeofenceClient;
+import com.baidu.location.LocationClient;
+import com.config.ConfigInterface;
+
+public class GoOuterApp extends Application {
+	// 测试Tag
+	private String tag = "GoOuterApp";
+	
+
+
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		 AVOSCloud.initialize(this, ConfigInterface.uID,
-				 ConfigInterface.uKey);
-		 Log.v(tag, "使用集成的application启动");
-		
+		AVOSCloud.initialize(this, ConfigInterface.uID, ConfigInterface.uKey);
+
+	
+
 	}
+
 
 }

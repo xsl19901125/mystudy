@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * 
+ * ·ÏÆú
  * @ClassName: ListViewPager
  * @Description: ×Ô¼ºÖØÐ´viewPager
  * @author xushenglin

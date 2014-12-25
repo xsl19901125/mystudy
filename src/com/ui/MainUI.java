@@ -100,12 +100,12 @@ public class MainUI extends FragmentActivity {
 		//设置vPage的监听器
 		vpContent.setOnPageChangeListener(new OnPageChangeListener() {
 			
-			private String tag="OnPageChangeListener";
+	
 
 			@Override
 			public void onPageSelected(int position) {
 				//设置头部textView变化
-				Log.v(tag, "点击了"+position);
+	
 				setCurrentPage(position);
 			}
 			

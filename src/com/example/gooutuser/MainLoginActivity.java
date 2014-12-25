@@ -80,7 +80,6 @@ public class MainLoginActivity extends Activity {
 	private void addButtonListener() {
 		// 给登录按钮添加监听
 		buttonLogin.setOnClickListener(new OnClickListener() {
-			private String tag = "buttonLogin";
 
 			@Override
 			public void onClick(View v) {
@@ -209,7 +208,6 @@ public class MainLoginActivity extends Activity {
 							Intent intent = new Intent(MainLoginActivity.this,
 									MainUI.class);
 							startActivity(intent);
-							Log.v(tag, "登陆成功");
 						} else {
 							editText.setText("");
 							editPwd.setText("");
@@ -258,8 +256,6 @@ public class MainLoginActivity extends Activity {
 	 * @throws
 	 */
 	private void initButton() {
-		String tag = "initButton";
-		Log.v(tag, "用户初始化控件");
 		editText = (EditText) findViewById(R.id.userLoginNameTxt);
 		editPwd = (EditText) findViewById(R.id.userPwdTxt);
 		buttonLogin = (Button) findViewById(R.id.btLogin);

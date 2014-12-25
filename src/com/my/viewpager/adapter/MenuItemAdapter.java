@@ -75,7 +75,6 @@ public class MenuItemAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
 		int height = parent.getHeight() / 3 - margin;
 		AbsListView.LayoutParams param = new AbsListView.LayoutParams(LayoutParams.MATCH_PARENT, height);
 		ViewHolder holder = null;
@@ -90,14 +89,7 @@ public class MenuItemAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-	/*	convertView.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Log.v(tag, "被点击了");
-				
-			}
-		});*/
+
 		//向里面设置数据 
 		setMenuItemData(position, holder);
 		convertView.setLayoutParams(param);
@@ -123,30 +115,6 @@ public class MenuItemAdapter extends BaseAdapter {
 			holder.tvMenuMsg.setVisibility(View.VISIBLE);
 			holder.tvMenuMsg.setText(item.getMenuMsg());
 		}
-	}
-	/**
-	 * 
-	 * @Title: reUserView 
-	 * @Description: 重用view控件 
-	 * @param @param convertView
-	 * @param @param parent
-	 * @param @return    设定文件 
-	 * @return ViewHolder    返回类型 
-	 * @throws 
-	**/
-	private ViewHolder reUserView(View convertView, ViewGroup parent) {
-		ViewHolder holder;
-		if (convertView == null) {
-			convertView = inflater.inflate(R.layout.menu_item, parent, false);
-			holder = new ViewHolder();
-			holder.ivImageView = (ImageView) convertView.findViewById(R.id.iv_menu_icon);
-			holder.tvMenuTitle = (TextView) convertView.findViewById(R.id.tv_menu_title);
-			holder.tvMenuMsg= (TextView) convertView.findViewById(R.id.tv_menu_msg);
-			convertView.setTag(holder);
-		} else {
-			holder = (ViewHolder) convertView.getTag();
-		}
-		return holder;
 	}
 	/**
 	 * 

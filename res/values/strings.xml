@@ -33,5 +33,6 @@
     <!-- 主服务界面 -->
     <string name="service_go_outer">专车</string>
     <string name="service_go_outer_service">提供出行叫车服务</string>
+    <string name="title_activity_location_ui">LocationUI</string>
 
 </resources>
