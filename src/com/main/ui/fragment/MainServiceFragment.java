@@ -17,6 +17,7 @@ import android.widget.GridView;
 import com.bean.ui.MenuItem;
 import com.example.gooutuser.R;
 import com.my.viewpager.adapter.MenuItemAdapter;
+import com.ui.CallCarUI;
 import com.ui.LocationUI;
 /**
  * 
@@ -115,7 +116,8 @@ public class MainServiceFragment extends Fragment {
 					
 					break;
 				case 1:
-					Log.v(Tag, "定车位界面");
+					Intent intent2=new Intent(getActivity(),CallCarUI.class);
+					startActivity(intent2);
 					break;
 
 				default:

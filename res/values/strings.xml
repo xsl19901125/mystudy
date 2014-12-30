@@ -34,5 +34,6 @@
     <string name="service_go_outer">专车</string>
     <string name="service_go_outer_service">提供出行叫车服务</string>
     <string name="title_activity_location_ui">LocationUI</string>
+    <string name="title_activity_call_car_ui">CallCarUI</string>
 
 </resources>

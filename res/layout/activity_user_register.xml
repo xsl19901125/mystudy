@@ -125,7 +125,6 @@
             style="@style/accountButtonStyle"
             android:layout_marginLeft="4dp"
             android:background="@drawable/btn_quick_register"
-            android:onClick="enter"
             android:text="@string/user_register_cancle_button" />
     </LinearLayout>
 
